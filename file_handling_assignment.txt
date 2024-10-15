@@ -1,0 +1,199 @@
+# Task1: Create a new text file and write a few lines of text into it
+# Create and open a new text file in write mode
+with open('assignment_file.txt', 'w') as file:
+    # Write a few lines of text into the file
+    file.write("This is the first line of text.\n")
+    file.write("Here is the second line of text.\n")
+    file.write("Finally, this is the third line of text.\n")
+
+# Confirm that the file has been written
+print("File 'assignment_file.txt' has been created and written to successfully.")
+
+
+
+
+
+# Task2: Open and read the contents of the file you just created
+# Open the file in read mode
+with open('assignment_file.txt', 'r') as file:
+    # Read the contents of the file
+    contents = file.read()
+
+# Print the contents to the console
+print("Contents of 'assignment_file.txt':")
+print(contents)
+
+
+
+
+
+
+# Task3: Add additional text to the existing file without deleting the current content
+# Step 1: Open the file in append mode
+with open('assignment_file.txt', 'a') as file:
+    # Step 2: Write additional lines of text to the file
+    file.write("This is an additional line of text.\n")
+    file.write("Appending another line to the file.\n")
+
+# Step 3: Open the file in read mode to verify the contents
+with open('assignment_file.txt', 'r') as file:
+    contents = file.read()
+
+# Step 4: Print the updated contents to the console
+print("Updated contents of 'assignment_file.txt':")
+print(contents)
+
+
+
+
+
+
+# Task4: Read and print each line from the file one by one
+# Open the file in read mode
+with open('assignment_file.txt', 'r') as file:
+    # Loop through each line in the file
+    for line in file:
+        # Print the current line
+        print(line, end='')
+
+
+
+
+# Task5: Write the contents of a list to a file, with each item on a new line
+# Sample list
+my_list = ["Apple", "Banana", "Cherry", "Date", "Elderberry"]
+
+# Open a file in write mode
+with open('assignment_file.txt', 'w') as file:
+    # Loop through the list
+    for item in my_list:
+        # Write each item to the file, followed by a newline character
+        file.write(item + '\n')
+
+# Confirm that the list has been written to the file
+print("The contents of the list have been written to 'assignment_file.txt'.")
+
+
+
+
+
+
+# Task6: Read the file content into a list, where each line is an element of the list
+# Open the file in read mode
+with open('assignment_file.txt', 'r') as file:
+    # Read the lines into a list
+    lines = file.readlines()
+
+# Remove any trailing newline characters from each line
+lines = [line.strip() for line in lines]
+
+# Print the list to verify its contents
+print("Contents of the file as a list:")
+print(lines)
+
+
+
+
+
+
+
+
+
+
+# Task7: Count the total number of words in the file
+# Open the file in read mode
+with open('assignment_file.txt', 'r') as file:
+    # Read the entire contents of the file
+    content = file.read()
+
+# Split the content into words
+words = content.split()
+
+# Count the number of words
+word_count = len(words)
+
+# Print the total number of words
+print(f"Total number of words in the file: {word_count}")
+
+
+
+
+
+
+
+
+
+
+
+# Task8: Define the source and destination file names
+source_file = 'assignment_file.txt'
+destination_file = 'destination_file.txt'
+
+# Open the source file in read mode and the destination file in write mode
+with open(source_file, 'r') as src, open(destination_file, 'w') as dst:
+    # Read the contents from the source file
+    content = src.read()
+    # Write the contents to the destination file
+    dst.write(content)
+
+# Confirm that the copying process is complete
+print(f"Contents of '{source_file}' have been copied to '{destination_file}'.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Task9: Check if a file exists before attempting to read it
+import os
+
+# Define the file name
+file_name = 'assignment_file.txt'
+
+# Check if the file exists
+if os.path.isfile(file_name):
+    # Open and read the file if it exists
+    with open(file_name, 'r') as file:
+        content = file.read()
+    print("File contents:")
+    print(content)
+else:
+    print(f"The file '{file_name}' does not exist.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Task10 : Delete a file using Python.
+import os
+
+# Define the file name
+file_name = 'file_to_delete.txt'
+
+# Check if the file exists
+if os.path.isfile(file_name):
+    # Delete the file
+    os.remove(file_name)
+    print(f"The file '{file_name}' has been deleted.")
+else:
+    print(f"The file '{file_name}' does not exist.")
